@@ -1,0 +1,1 @@
+# Crud-Operation-Single-Table-In-Django
