@@ -6,4 +6,6 @@ cd CrudOperaton
 python manage.py startapp WebApplication
 Run the project
 
-python manage.py makemigrations WebApplication python manage.py migrate python manage.py runserver
+python manage.py makemigrations WebApplication 
+python manage.py migrate
+python manage.py runserver
