@@ -1,0 +1,54 @@
+{% include "WebApplication/SuperAdminNavbar.html" %}
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ {% block content %}
+<body>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+                    <h1 align="center"></h1>
+					 <form method="POST" class="form-horizontal" action="../updateGovtEmployee/{{governmentEmployee.GovernmentEmployeeID}}"> {% csrf_token %}
+					<table>
+                       <h1>EDIT GOVERNMENT EMPLOYEE INFORMATION</h1>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeID</label>
+                                 <input type="text" name="GovernmentEmployeeID" id="id_GovernmentEmployeeID" required maxlength="50" value="{{ governmentEmployee.GovernmentEmployeeID }}" />
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeName</label>
+                               <input type="text" name="GovernmentEmployeeName" id="id_GovernmentEmployeeName" required maxlength="100" value="{{ governmentEmployee.GovernmentEmployeeName }}" />
+                            </div>
+
+                            <div class="input-group">
+                                <label>GovernmentEmployeeAddress</label>
+                                 <input type="text" name="GovernmentEmployeeAddress" id="id_GovernmentEmployeeAddress" required maxlength="100" value="{{ governmentEmployee.GovernmentEmployeeAddress }}" />
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeePhnNumber</label>
+                               <input type="text" name="GovernmentEmployeePhnNumber" id="id_GovernmentEmployeePhnNumber" required maxlength="15" value="{{ governmentEmployee.GovernmentEmployeePhnNumber }}" />
+                            </div>
+
+                            <div class="input-group">
+                                <label>GovernmentEmployeeGmail</label>
+                                 <input type="text" name="GovernmentEmployeeGmail" id="id_GovernmentEmployeeGmail" required maxlength="" value="{{ governmentEmployee.GovernmentEmployeeGmail }}" />
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeDesignation</label>
+                               <input type="text" name="GovernmentEmployeeDesignation" id="id_GovernmentEmployeeDesignation" required maxlength="100" value="{{ governmentEmployee.GovernmentEmployeeDesignation }}" />
+                            </div>
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+					</table>
+					 </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+ {% endblock %}

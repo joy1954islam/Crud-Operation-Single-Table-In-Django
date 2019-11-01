@@ -1,0 +1,53 @@
+{% include "WebApplication/SuperAdminNavbar.html" %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+ <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ {% block content %}
+
+
+
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+                     <h1 align="center">Government Employee Information</h1>
+					<table>
+						<thead>
+							<tr class="table100-head">
+                                    <th  class="column1" >EmployeeID</th>
+                                    <th  class="column2">EmployeeName</th>
+                                    <th  class="column3">EmployeeAddress</th>
+                                    <th  class="column4">EmployeePhnNumber</th>
+								   <th  class="column5">EmployeeGmail</th>
+                                    <th  class="column6">EmployeeDesignation</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+                         {% for governmentEmployee in governmentEmployees %}
+								<tr>
+									<td class="column1">{{ governmentEmployee.GovernmentEmployeeID}}</td>
+									<td class="column2">{{ governmentEmployee.GovernmentEmployeeName }}</td>
+									<td class="column3">{{ governmentEmployee.GovernmentEmployeeAddress }}</td>
+
+									<td class="column4">{{ governmentEmployee.GovernmentEmployeePhnNumber }}</td>
+									<td class="column5">{{ governmentEmployee.GovernmentEmployeeGmail }}</td>
+									<td class="column6">{{ governmentEmployee.GovernmentEmployeeDesignation }}</td>
+									<td class="column8">
+                                           <a href="editGovtEmployee/{{ governmentEmployee.GovernmentEmployeeID}}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+                                           <a href="deleteGovtEmployee/{{ governmentEmployee.GovernmentEmployeeID }}">Delete</a>
+                                    </td>
+								</tr>
+                        {% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+ {% endblock %}

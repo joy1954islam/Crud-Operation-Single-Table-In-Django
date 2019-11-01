@@ -1,0 +1,55 @@
+
+{% include "WebApplication/SuperAdminNavbar.html" %}
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ {% block content %}
+<body>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+                    <h1 align="center"></h1>
+					 <form method="POST" class="form-horizontal" action="{% url 'addGovtEmployee' %}"> {% csrf_token %}
+					<table>
+                       <h1>ADD GOVERNMENT EMPLOYEE INFORMATION</h1>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeID</label>
+                                {{form.GovernmentEmployeeID}}
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeName</label>
+                                {{form.GovernmentEmployeeName}}
+                            </div>
+
+                            <div class="input-group">
+                                <label>GovernmentEmployeeAddress</label>
+                                    {{form.GovernmentEmployeeAddress}}
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeePhnNumber</label>
+                                {{form.GovernmentEmployeePhnNumber}}
+                            </div>
+
+                            <div class="input-group">
+                                <label>GovernmentEmployeeGmail</label>
+                                {{form.GovernmentEmployeeGmail}}
+                            </div>
+                            <div class="input-group">
+                                <label>GovernmentEmployeeDesignation</label>
+                                 {{form.GovernmentEmployeeDesignation}}
+                            </div>
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+					</table>
+					 </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+ {% endblock %}
